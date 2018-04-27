@@ -32,7 +32,22 @@ export class SpinnerComponent implements OnDestroy, OnInit {
     @Input()
     public spinner = Spinkit.skCubeGrid;
     @Input()
-    public filteredUrlPatterns: string[] = [];
+    set filteredUrlPatterns(newUrls: string[]) {
+      if (!(newUrls instanceof Array)) {
+          throw new TypeError('`filteredUrlPatterns` must be an array.');
+      }
+
+      if (!!newUrls.length && newUrls) {
+          this.pendingInterceptorService.filteredUrlPatterns.length = 0;
+          newUrls.forEach(e => {
+            if (e) {
+              this.pendingInterceptorService.filteredUrlPatterns.push(new RegExp(e));
+            }
+          });
+      }
+    }
+
+
     @Input()
     public debounceDelay = 0;
     @Input()
@@ -48,16 +63,6 @@ export class SpinnerComponent implements OnDestroy, OnInit {
 
     ngOnInit(): void {
         this.nullifySpinnerIfComponentOutletIsDefined();
-
-        if (!(this.filteredUrlPatterns instanceof Array)) {
-            throw new TypeError('`filteredUrlPatterns` must be an array.');
-        }
-
-        if (!!this.filteredUrlPatterns.length) {
-            this.filteredUrlPatterns.forEach(e => {
-                this.pendingInterceptorService.filteredUrlPatterns.push(new RegExp(e));
-            });
-        }
     }
 
     ngOnDestroy(): void {
