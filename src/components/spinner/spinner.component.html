@@ -1,4 +1,4 @@
-<div id="spinner" *ngIf="isSpinnerVisible">
+<div id="spinner" *ngIf="isSpinnerVisible" [ngStyle]="{'z-index': zIndex}">
 
     <ng-container *ngComponentOutlet="entryComponent"></ng-container>
 
@@ -43,4 +43,3 @@
     </sk-wave>
 
 </div>
-

@@ -30,6 +30,8 @@ export class SpinnerComponent implements OnDestroy, OnInit {
     @Input()
     public backgroundColor: string;
     @Input()
+    public zIndex = 9999;
+    @Input()
     public spinner = Spinkit.skCubeGrid;
     @Input()
     set filteredUrlPatterns(newUrls: string[]) {
