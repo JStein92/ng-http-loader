@@ -1,8 +1,8 @@
-# ng-http-loader
+# bargz-ng-http-loader
 
-[![Build Status](https://travis-ci.org/mpalourdio/ng-http-loader.svg?branch=master)](https://travis-ci.org/mpalourdio/ng-http-loader)
-[![npm](https://img.shields.io/npm/v/ng-http-loader.svg)](https://www.npmjs.com/package/ng-http-loader)
-[![npm](https://img.shields.io/npm/dm/ng-http-loader.svg)](https://www.npmjs.com/package/ng-http-loader)
+[![Build Status](https://travis-ci.org/mpalourdio/bargz-ng-http-loader.svg?branch=master)](https://travis-ci.org/mpalourdio/bargz-ng-http-loader)
+[![npm](https://img.shields.io/npm/v/bargz-ng-http-loader.svg)](https://www.npmjs.com/package/bargz-ng-http-loader)
+[![npm](https://img.shields.io/npm/dm/bargz-ng-http-loader.svg)](https://www.npmjs.com/package/bargz-ng-http-loader)
 
 ## Changelog
 
@@ -17,7 +17,7 @@ Use the fork, Luke. PR without tests will likely not be merged.
 To install this library, run:
 
 ```bash
-$ npm install ng-http-loader --save
+$ npm install bargz-ng-http-loader --save
 ```
 
 ## What does it do ?
@@ -104,7 +104,7 @@ In your app.component.html, simply add :
 
 You can customize the **background-color**, the **spinner type** and the **debounce delay** (ie. after how many milliseconds the spinner will be displayed, if needed):
 ```xml
-<spinner 
+<spinner
     [backgroundColor]="'#ff0000'"
     [spinner]="spinkit.skWave"
     [debounceDelay]="200"
